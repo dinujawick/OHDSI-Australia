@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% load wagtailcore_tags %}
+
+{% block body_class %}template-content-page{% endblock %}
+
+{% block content %}
+<header class="utility-bar">
+    <button class="menu-button" type="button" aria-label="Toggle navigation" aria-controls="main-navigation" aria-expanded="false"><span></span><span></span><span></span></button>
+    <a class="brand" href="/" aria-label="OHDSI Australia home"><strong>OHDSI</strong><span>AUSTRALIA</span></a>
+    <nav id="main-navigation" aria-label="Main navigation"><a href="/about/">About</a><a href="/events/">Events</a><a href="/get-involved/">Get involved</a><a href="/data-partners/">Data partners</a><a href="/contact/">Contact</a></nav>
+    <a class="global-link" href="https://www.ohdsi.org/" target="_blank" rel="noopener">OHDSI Global</a>
+</header>
+
+<main class="content-page">
+    <div class="content-page-hero"><p>OHDSI Australia</p><h1>{{ page.title }}</h1>{% if page.intro %}<div>{{ page.intro|linebreaks }}</div>{% endif %}</div>
+    <section class="content-page-body">{{ page.body|richtext }}</section>
+    {% if page.get_children.live %}
+        <section class="child-pages"><h2>Explore</h2><div>{% for child in page.get_children.live %}<a href="{% pageurl child %}"><span>{{ child.title }}</span><span aria-hidden="true">&rarr;</span></a>{% endfor %}</div></section>
+    {% endif %}
+</main>
+
+<footer><div><a class="brand" href="/"><strong>OHDSI</strong><span>AUSTRALIA</span></a><p>Part of the global OHDSI community.</p></div><p>&copy; {% now "Y" %} Observational Health Data Sciences and Informatics</p></footer>
+{% endblock content %}

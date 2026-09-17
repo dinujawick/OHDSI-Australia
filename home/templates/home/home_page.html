@@ -1,0 +1,99 @@
+{% extends "base.html" %}
+{% load wagtailcore_tags %}
+
+{% block body_class %}template-homepage{% endblock %}
+
+{% block content %}
+
+<header class="utility-bar">
+	<button class="menu-button" type="button" aria-label="Toggle navigation" aria-controls="main-navigation" aria-expanded="false"><span></span><span></span><span></span></button>
+	<a class="brand" href="/" aria-label="OHDSI Australia home"><strong>OHDSI</strong><span>AUSTRALIA</span></a>
+	<nav id="main-navigation" aria-label="Main navigation"><a href="/about/">About</a><a href="/events/">Events</a><a href="/get-involved/">Get involved</a><a href="/data-partners/">Data partners</a><a href="/contact/">Contact</a></nav>
+	<a class="global-link" href="https://www.ohdsi.org/" target="_blank" rel="noopener">OHDSI Global</a>
+</header>
+
+<main>
+	<section class="hero">
+		<div class="network-map" aria-hidden="true">
+			<svg viewBox="0 0 1000 760" role="presentation" focusable="false">
+				<g class="australia-states">
+					<path id="AU-WA" title="Western Australia" d="M110 176 L155 111 L251 75 L405 78 L405 329 L365 410 L278 440 L194 401 L136 343 L97 260 Z" />
+					<path id="AU-NT" title="Northern Territory" d="M405 78 L558 66 L665 100 L662 261 L531 286 L405 290 Z" />
+					<path id="AU-SA" title="South Australia" d="M405 290 L531 286 L662 261 L697 368 L652 457 L600 475 L554 455 L505 469 L456 449 L405 411 Z" />
+					<path id="AU-QLD" title="Queensland" d="M665 100 L775 118 L838 158 L892 226 L933 320 L912 366 L941 407 L916 477 L837 504 L757 470 L697 368 L662 261 Z" />
+					<path id="AU-NSW" title="New South Wales" d="M697 368 L757 470 L837 504 L823 565 L754 616 L680 580 L652 545 L600 475 L652 457 Z" />
+					<path id="AU-ACT" title="Australian Capital Territory" d="M758 520 L772 515 L781 529 L772 541 L756 535 Z" />
+					<path id="AU-VIC" title="Victoria" d="M600 475 L680 580 L754 616 L706 654 L641 661 L588 626 L554 558 L505 469 L554 455 Z" />
+					<path id="AU-TAS" title="Tasmania" d="M667 706 C681 692 705 686 721 700 L727 727 L700 745 L677 732 Z" />
+				</g>
+				<g class="map-state-labels"><text x="210" y="244">WA</text><text x="476" y="173">NT</text><text x="480" y="365">SA</text><text x="760" y="228">QLD</text><text x="735" y="465">NSW</text><text x="638" y="552">VIC</text><text x="676" y="719">TAS</text></g>
+				<g class="connection-lines">
+					<path d="M237 289 L493 258 L532 174 L734 253" />
+					<path d="M493 258 L511 389 L626 477 L695 450" />
+					<path d="M532 174 L653 568 L699 716" />
+					<path d="M237 289 L397 348 L511 389" />
+					<path d="M734 253 L695 450 L626 477" />
+				</g>
+				<g class="flow-lines">
+					<path d="M237 289 L493 258 L532 174 L734 253" />
+					<path d="M493 258 L511 389 L626 477 L695 450" />
+					<path d="M532 174 L653 568 L699 716" />
+				</g>
+				<g class="map-node" data-node="Perth"><circle cx="237" cy="289" r="11" /><circle class="node-ring" cx="237" cy="289" r="18" /></g>
+				<g class="map-node" data-node="Adelaide"><circle cx="511" cy="389" r="11" /><circle class="node-ring" cx="511" cy="389" r="18" /></g>
+				<g class="map-node" data-node="Melbourne"><circle cx="626" cy="477" r="11" /><circle class="node-ring" cx="626" cy="477" r="18" /></g>
+				<g class="map-node" data-node="Hobart"><circle cx="699" cy="716" r="10" /><circle class="node-ring" cx="699" cy="716" r="17" /></g>
+				<g class="map-node" data-node="Canberra"><circle cx="695" cy="450" r="10" /><circle class="node-ring" cx="695" cy="450" r="17" /></g>
+				<g class="map-node" data-node="Sydney"><circle cx="734" cy="333" r="11" /><circle class="node-ring" cx="734" cy="333" r="18" /></g>
+				<g class="map-node" data-node="Brisbane"><circle cx="734" cy="253" r="11" /><circle class="node-ring" cx="734" cy="253" r="18" /></g>
+				<g class="map-node" data-node="Darwin"><circle cx="532" cy="174" r="11" /><circle class="node-ring" cx="532" cy="174" r="18" /></g>
+				<g class="map-node" data-node="Alice Springs"><circle cx="493" cy="258" r="10" /><circle class="node-ring" cx="493" cy="258" r="17" /></g>
+			</svg>
+			<p class="map-status"><span></span> Australian OHDSI community network</p>
+		</div>
+		<div class="hero-copy">
+			<p class="region-label">OHDSI Australia</p>
+			<h1>Advancing real-world evidence across Australia</h1>
+			{% if page.introduction %}
+				<div class="introduction">{{ page.introduction|richtext }}</div>
+			{% else %}
+				<p class="introduction">A collaborative community connecting researchers, health services, government, and industry to generate reliable, reproducible evidence from Australian health data.</p>
+			{% endif %}
+			<div class="hero-actions"><a class="button button-gold" href="/get-involved/">Get involved</a><a class="button button-outline" href="/about/">Explore our community <span aria-hidden="true">&rarr;</span></a></div>
+		</div>
+	</section>
+
+	<div class="breadcrumb">HOME</div>
+	<section class="panel about" id="about">
+		<p class="kicker">Who are we?</p>
+		<h2>Open science for better health decisions.</h2>
+		<div class="two-column-copy">
+			<p>OHDSI Australia is part of the global Observational Health Data Sciences and Informatics community. We bring together people and organisations using the OMOP Common Data Model and open-source analytics to learn from observational health data.</p>
+			<p>Our work supports transparent, secure, and scalable research across a diverse health system, while respecting local governance and patient privacy.</p>
+		</div>
+		<div class="stats" id="impact"><div><strong>01</strong><span>Australian community</span></div><div><strong>OMOP</strong><span>Common data model</span></div><div><strong>Open</strong><span>Methods and tools</span></div><div><strong>Global</strong><span>Connected network</span></div></div>
+	</section>
+
+	<section class="panel purpose" id="community">
+		<p class="kicker">Why OHDSI Australia?</p>
+		<h2>Strengthening evidence generation, nationally.</h2>
+		<p>Australia's health data is rich, but distributed across jurisdictions, institutions, and systems. OHDSI Australia helps connect local expertise, common standards, and shared analytical practice so participating organisations can produce trusted evidence at scale.</p>
+		<ul><li>Support practical adoption of the OMOP Common Data Model</li><li>Connect Australian expertise with the global OHDSI network</li><li>Share tools, training, and implementation experience</li><li>Enable privacy-preserving federated research</li></ul>
+	</section>
+
+	<section class="panel updates" id="updates">
+		<div class="section-heading"><div><p class="kicker">Latest in Australia</p><h2>Community updates</h2></div><a href="#resources">View resources <span aria-hidden="true">&rarr;</span></a></div>
+		<div class="editable-content">
+			{% if page.content %}
+				{{ page.content|richtext }}
+			{% else %}
+				<p>Share upcoming community calls, implementation updates, study announcements, and events here through the Wagtail editor.</p>
+			{% endif %}
+		</div>
+	</section>
+
+	<section class="resources" id="resources"><p class="kicker">Useful resources</p><div class="resource-links"><a href="https://www.ohdsi.org/" target="_blank" rel="noopener">OHDSI Global <span>&rarr;</span></a><a href="https://ohdsi.github.io/TheBookOfOhdsi/" target="_blank" rel="noopener">The Book of OHDSI <span>&rarr;</span></a><a href="https://forums.ohdsi.org/" target="_blank" rel="noopener">OHDSI Forums <span>&rarr;</span></a><a href="https://github.com/OHDSI" target="_blank" rel="noopener">GitHub Tools <span>&rarr;</span></a></div></section>
+</main>
+
+<footer><div><a class="brand" href="/"><strong>OHDSI</strong><span>AUSTRALIA</span></a><p>Part of the global OHDSI community.</p></div><p>&copy; {% now "Y" %} Observational Health Data Sciences and Informatics</p></footer>
+{% endblock content %}
