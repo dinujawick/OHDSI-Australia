@@ -1,0 +1,12 @@
+{% load static %}
+<aside class="koa-companion" aria-label="Koa's guidance" data-koa-companion="{{ location }}">
+    <img class="koa-companion-image" src="{% static 'images/koa-open.png' %}" alt="" width="100" height="110" data-koa-image
+         data-welcome-src="{% static 'images/koa-welcome.png' %}" data-wave-src="{% static 'images/koa-wave.png' %}"
+         data-open-src="{% static 'images/koa-open.png' %}" data-excited-src="{% static 'images/koa-excited.png' %}">
+    <div class="koa-companion-copy">
+        <p class="koa-companion-name"><span aria-hidden="true"></span> Koa <span class="koa-companion-role"> / Your journey companion</span></p>
+        <p class="koa-companion-tip" data-koa-tip>{% if record %}{{ record.tip }}{% else %}{{ page.koa_fallback_tip }}{% endif %}</p>
+        <button type="button" class="koa-companion-ask" data-open-koa aria-controls="koa-chat" aria-expanded="false">Ask Koa</button>
+        <button type="button" class="koa-companion-next" data-koa-next="">Explore <span aria-hidden="true">&rarr;</span></button>
+    </div>
+</aside>

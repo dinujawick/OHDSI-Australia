@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/6.1/ref/settings/
 """
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
+import os
 from pathlib import Path
 
 PROJECT_DIR = Path(__file__).resolve().parent.parent
@@ -182,3 +183,10 @@ WAGTAILDOCS_EXTENSIONS = ['csv', 'docx', 'key', 'odt', 'pdf', 'pptx', 'rtf', 'tx
 
 # Maximum upload size for documents in bytes.
 WAGTAILDOCS_MAX_UPLOAD_SIZE = 10 * 1024 * 1024  # 10MB
+
+
+# Koa: credentials stay on the server; chat messages are not saved by this app.
+KOA_OPENAI_API_KEY = os.environ.get("OPENAI_API_KEY", "")
+KOA_MODEL = os.environ.get("KOA_MODEL", "gpt-4.1-mini")
+KOA_REQUESTS_PER_MINUTE = 10
+KOA_REQUESTS_PER_DAY = 1000

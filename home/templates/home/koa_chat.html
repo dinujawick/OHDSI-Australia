@@ -1,0 +1,25 @@
+{% load static %}
+<button type="button" class="koa-chat-launcher" data-open-koa aria-controls="koa-chat" aria-expanded="false">
+    <img src="{% static 'images/koa-wave.png' %}" alt="" width="42" height="46"><span>Ask Koa <small>Your journey companion</small></span><span aria-hidden="true">&nearr;</span>
+</button>
+<dialog id="koa-chat" class="koa-chat" aria-labelledby="koa-chat-title" data-chat-url="{% url 'koa_chat' %}" data-status-url="{% url 'koa_status' %}">
+    <header class="koa-chat-header">
+        <img src="{% static 'images/koa-welcome.png' %}" alt="" width="52" height="58">
+        <div><h2 id="koa-chat-title">A little guidance<br>from Koa.</h2><p data-chat-mode>Getting ready&hellip;</p></div>
+        <button type="button" class="koa-chat-icon" data-close-koa aria-label="Minimise Koa">&minus;</button>
+    </header>
+    <div class="koa-chat-context"><span data-chat-context>Exploring OHDSI Australia</span><button type="button" data-clear-koa>Clear chat</button></div>
+    <p class="koa-chat-goal" data-chat-goal hidden></p>
+    <div class="koa-chat-messages" role="log" aria-label="Conversation with Koa" aria-live="polite" aria-relevant="additions" tabindex="0" data-chat-messages></div>
+    <div class="koa-chat-prompts" aria-label="Questions to ask Koa">
+        {% for example in page.goal_examples %}<button type="button" data-koa-prompt="{{ example.value.question }}">{{ example.value.label }}</button>{% endfor %}
+    </div>
+    <p class="koa-chat-status" role="status" data-chat-status></p>
+    <form class="koa-chat-form" data-chat-form>
+        {% csrf_token %}
+        <label class="visually-hidden" for="koa-question">Your question for Koa</label>
+        <textarea id="koa-question" name="message" rows="2" maxlength="1000" placeholder="What would you like to explore?" required></textarea>
+        <button type="submit" aria-label="Send question" data-chat-send><span aria-hidden="true">&uarr;</span></button>
+    </form>
+    <p class="koa-chat-note" data-chat-note>Conversation lasts while this page is open.</p>
+</dialog>

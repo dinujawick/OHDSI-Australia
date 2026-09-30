@@ -1,0 +1,61 @@
+.koa-chat-launcher { position: fixed; z-index: 30; right: 24px; bottom: 22px; display: flex; align-items: center; gap: 12px; padding: 8px 18px 8px 10px; border: 1px solid #c3d4ac; border-radius: 18px; color: #244530; background: #f5f7e9; box-shadow: 0 8px 30px #002b2340; font: inherit; font-size: 15px; font-weight: 700; cursor: pointer; text-align: left; }
+.koa-chat-launcher[hidden] { display: none; }
+.koa-chat-launcher img { object-fit: contain; }
+.koa-chat-launcher small { display: block; color: #5e7350; font-size: 10px; font-weight: 400; }
+.koa-companion-ask { display: inline-flex; align-items: center; min-height: 34px; margin: 10px 12px 0 0; padding: 5px 12px; border: 1px solid #9bae84; border-radius: 7px; color: #284d33; background: #f0f4df; font: inherit; font-size: 12px; font-weight: 700; cursor: pointer; }
+.koa-chat { position: fixed; z-index: 40; inset: 18px 18px 18px auto; width: 380px; max-width: calc(100vw - 32px); max-height: none; height: calc(100dvh - 36px); margin: 0; padding: 0; overflow: hidden; border: 1px solid #ccd9bb; border-radius: 22px; color: #234632; background: #f8f9f2; box-shadow: 0 24px 90px #00271e50; font-family: "Source Sans 3", sans-serif; }
+.koa-chat[open] { display: flex; flex-direction: column; }
+.koa-chat::backdrop { background: #002b21a6; backdrop-filter: blur(3px); }
+.koa-chat-header { display: flex; align-items: center; gap: 12px; flex-shrink: 0; padding: 22px 20px 18px; border-bottom: 1px solid #d5dfc5; background: radial-gradient(ellipse at 100% 0,#dce6c4,transparent 80%),#edf1e3; }
+.koa-chat-header img { flex-shrink: 0; object-fit: contain; }
+.koa-chat-header h2 { margin: 0; font-size: 25px; line-height: 1.08; letter-spacing: -.03em; }
+.koa-chat-header p { margin: 8px 0 0; color: #557444; font-size: 10px; }
+.koa-chat-icon { align-self: flex-start; flex-shrink: 0; margin-left: auto; width: 34px; height: 34px; border: 1px solid #c6d2b4; border-radius: 50%; color: #3b5730; background: #f4f7e9; font-size: 24px; cursor: pointer; }
+.koa-chat-context { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 12px 18px; border-bottom: 1px solid #e0e5d6; font-size: 10px; color: #627352; }
+.koa-chat-context button { flex-shrink: 0; padding: 4px 0; border: 0; color: #436235; background: none; font: inherit; text-decoration: underline; text-underline-offset: 3px; cursor: pointer; }
+.koa-chat-messages { flex: 1; min-height: 80px; overflow-y: auto; overscroll-behavior: contain; padding: 20px 18px; scrollbar-width: thin; scrollbar-color: #bac8a6 transparent; }
+.koa-chat-message { margin: 0 18px 20px 0; padding: 15px; border: 1px solid #dae1d0; border-radius: 0 14px 14px 14px; background: #fffef9; overflow-wrap: anywhere; }
+.koa-chat-message-user { margin: 0 0 20px 28px; border-color: #28583e; border-radius: 14px 0 14px 14px; color: #fffef3; background: #28583e; }
+.koa-chat-speaker { display: block; margin-bottom: 6px; font-size: 9px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; opacity: .75; }
+.koa-chat-message p { margin: 0; font-size: 13px; line-height: 1.7; white-space: pre-wrap; }
+.koa-chat-reply-note { display: block; margin-top: 12px; color: #6d7c5f; font-size: 10px; line-height: 1.5; }
+.koa-chat-source { display: block; margin-top: 10px; padding: 10px 0; border-top: 1px solid #e1e6d8; color: #3d6033; font-size: 12px; text-underline-offset: 3px; }
+.koa-chat-source span { display: block; margin-top: 5px; color: #68755e; font-size: 11px; line-height: 1.5; }
+.koa-chat-action { display: block; width: 100%; margin-top: 9px; padding: 12px; border: 1px solid #becda7; border-radius: 8px; color: #315132; background: #edf2df; font: inherit; text-align: left; cursor: pointer; }
+.koa-chat-action strong { display: block; font-size: 12px; }
+.koa-chat-action span { display: block; margin-top: 4px; font-size: 11px; line-height: 1.4; }
+.koa-chat-action:hover { background: #e1eacb; }
+.koa-chat-prompts { display: flex; flex-wrap: wrap; gap: 7px; flex-shrink: 0; padding: 0 18px 12px; }
+.koa-chat-prompts button { padding: 7px 9px; border: 1px solid #d0dbc2; border-radius: 14px; color: #4d673c; background: transparent; font: inherit; font-size: 11px; cursor: pointer; }
+.koa-chat-status { min-height: 16px; margin: 0; padding: 0 18px 8px; color: #596a46; font-size: 11px; line-height: 1.5; }
+.koa-chat-form { display: flex; align-items: flex-end; gap: 10px; margin: 0 14px; padding: 12px; border: 1px solid #b9caaa; border-radius: 12px; background: white; }
+.koa-chat-form textarea { min-width: 0; width: 100%; max-height: 120px; padding: 0; resize: vertical; border: 0; outline: 0; color: #234632; background: transparent; font: inherit; font-size: 14px; line-height: 1.5; }
+.koa-chat-form:focus-within { outline: 2px solid #839c5a; outline-offset: 2px; }
+.koa-chat-form button { display: grid; place-items: center; flex: 0 0 36px; width: 36px; height: 36px; padding: 0; border: 0; border-radius: 50%; color: #f1db83; background: #28583e; font-size: 22px; cursor: pointer; }
+.koa-chat button:disabled { opacity: .5; cursor: wait; }
+.koa-chat-note { margin: 10px 20px 15px; color: #758269; font-size: 10px; line-height: 1.5; }
+.koa-chat :focus-visible, .koa-chat-launcher:focus-visible, .koa-companion-ask:focus-visible { outline: 3px solid #bf8c23; outline-offset: 3px; }
+.journey-node.is-koa-suggested .journey-node-copy { outline: 2px dashed #e7eeb7; outline-offset: 4px; }
+@media (min-width: 1101px) {
+    .koa-chat-open .hero { margin-right: 410px; padding-left: 3vw; padding-right: 3vw; }
+    .koa-chat-open .is-exploring .pathway-workspace { grid-template-columns: 175px minmax(0,1fr); gap: 16px; }
+    .koa-chat-open .is-exploring .pathway-sidebar { padding: 20px 8px; }
+    .koa-chat-open .research-card-grid { grid-template-columns: 1fr; }
+    .koa-chat-open .research-card { padding: 16px; }
+    .koa-chat-open .research-card-top { margin-bottom: 12px; }
+    .koa-chat-open .research-card strong br { display: none; }
+    .koa-chat-open .explorer-header { padding: 28px 22px; }
+    .koa-chat-open .explorer-section-heading { flex-wrap: wrap; }
+    .koa-chat-open .explorer-header .koa-companion-image { width: 60px; flex-basis: 60px; }
+    .koa-chat-open .koa-companion-role { display: none; }
+}
+@media (max-width: 1100px) {
+    .koa-chat { inset: auto 16px 16px; width: min(440px,calc(100vw - 32px)); height: min(780px,calc(100dvh - 32px)); margin: 0 0 0 auto; }
+}
+@media (max-width: 480px) {
+    .koa-chat { inset: 8px; max-width: none; width: calc(100vw - 16px); height: calc(100dvh - 16px); border-radius: 18px; }
+    .koa-chat-launcher { right: 14px; bottom: 14px; gap: 8px; padding-right: 12px; }
+    .koa-chat-launcher small { display: none; }
+    .koa-chat-header { padding: 16px; }
+    .koa-chat-header h2 { font-size: 23px; }
+}

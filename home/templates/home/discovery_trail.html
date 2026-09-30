@@ -1,0 +1,15 @@
+{% load static %}
+<dialog class="discovery-trail" id="discovery-trail" aria-labelledby="trail-title">
+    <header class="trail-dialog-header"><img src="{% static 'images/koa-open.png' %}" alt="" width="64" height="70"><div><p class="explorer-eyebrow">A question. A path. Your next step.</p><h2 id="trail-title">My discovery trail</h2></div><button type="button" data-close-trail aria-label="Close discovery trail">&times;</button></header>
+    <div class="trail-dialog-body">
+        <div class="trail-saved-return" data-trail-resume-dialog hidden><p>You have a saved trail on this device.</p><button type="button" data-resume-trail>Resume saved trail</button></div>
+        <form data-goal-form class="trail-goal-form"><label for="trail-goal">What would you like to explore?</label><textarea id="trail-goal" data-goal-input maxlength="400" rows="2" placeholder="{{ page.goal_placeholder }}" required></textarea><button type="submit">Build my pathway <span aria-hidden="true">&rarr;</span></button><p data-plan-status role="status"></p><p>Suggestions from published site content. Your pinned discoveries stay with you when you change your question.</p></form>
+        <section class="trail-collection" aria-labelledby="trail-pins-title"><div class="trail-section-title"><h3 id="trail-pins-title">Discoveries worth keeping</h3><span data-pin-count>0 / 30</span></div><div data-trail-pins></div></section>
+        <form class="trail-question-form" data-trail-question-form><label for="trail-question">A question to come back to</label><div><input id="trail-question" maxlength="500" placeholder="What would I like to ask next?" required><button type="submit">Keep question</button></div></form>
+        <section class="trail-checklist" aria-labelledby="trail-checklist-title"><div class="trail-section-title"><h3 id="trail-checklist-title">My next steps</h3><span data-checklist-count></span></div><p>Mark a step when you have done it. Visiting a page does not complete a step.</p><div data-trail-checklist></div></section>
+        <p class="trail-status" role="status" data-trail-status></p>
+        <div class="trail-save-actions"><button type="button" data-save-trail>Save on this device</button><button type="button" data-download-trail>Download my plan</button></div>
+        <p class="trail-storage-note" data-storage-note>Nothing is saved until you choose Save. Saved trails stay in this browser, on this device.</p>
+        <div class="trail-secondary-actions"><button type="button" data-clear-trail>Clear current trail</button><button type="button" data-forget-trail hidden>Forget saved trail</button></div>
+    </div>
+</dialog>

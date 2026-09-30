@@ -7,8 +7,13 @@ from wagtail import urls as wagtail_urls
 from wagtail.documents import urls as wagtaildocs_urls
 
 from search import views as search_views
+from home import koa_views
 
 urlpatterns = [
+    path("api/koa/plan/", koa_views.plan, name="koa_plan"),
+    path("api/koa/content/<int:page_id>/", koa_views.content, name="koa_content"),
+    path("api/koa/status/", koa_views.status, name="koa_status"),
+    path("api/koa/chat/", koa_views.chat, name="koa_chat"),
     path("django-admin/", admin.site.urls),
     path("admin/", include(wagtailadmin_urls)),
     path("documents/", include(wagtaildocs_urls)),

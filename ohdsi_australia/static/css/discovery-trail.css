@@ -1,0 +1,100 @@
+.trail-entry-button { position: absolute; z-index: 2; top: 28px; right: max(6vw,32px); display: inline-flex; align-items: center; gap: 9px; padding: 8px 13px; border: 1px solid #ffffff50; border-radius: 24px; color: #fff6c8; background: #04463088; font: inherit; font-size: 13px; cursor: pointer; }
+.trail-entry-button span { display: grid; place-items: center; min-width: 21px; height: 21px; border-radius: 50%; color: #315335; background: #edf2d7; font-size: 11px; }
+.goal-start { margin: 30px 0 0; padding: 24px 26px; border: 1px solid #ffffff2e; border-radius: 16px; background: #043e2c70; text-shadow: none; text-align: left; }
+.hero-copy.is-pathway-selected .goal-start { display: none; }
+.goal-start > .explorer-eyebrow { color: #ffdc76; }
+.goal-start h2 { margin: 0 0 20px; color: #f6f8e8; font-size: 28px; line-height: 1.15; }
+.trail-goal-form label { display: block; margin: 0 0 10px; font-size: 15px; font-weight: 700; }
+.trail-goal-form textarea { display: block; width: 100%; min-height: 84px; padding: 14px 16px; resize: vertical; border: 1px solid #c1cfaf; border-radius: 10px; color: #2b503a; background: #fffef8; font: inherit; font-size: 15px; line-height: 1.5; }
+.trail-goal-form > button, .trail-save-actions > button:first-child { margin-top: 12px; padding: 12px 18px; border: 1px solid #e7ce7a; border-radius: 8px; color: #25432c; background: #efd887; font: inherit; font-size: 13px; font-weight: 700; cursor: pointer; }
+.goal-examples { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; margin-top: 18px; color: #c7d9bc; font-size: 11px; }
+.goal-examples button { padding: 6px 10px; border: 1px solid #a8bd895c; border-radius: 20px; color: #e6edd6; background: none; font: inherit; cursor: pointer; }
+.trail-resume { margin: 0 0 22px; padding: 16px; border-left: 3px solid #f0d275; background: #edf3cc12; }
+.trail-resume p { margin-bottom: 6px; font-size: 14px; }
+.trail-resume button { padding: 4px 0; border: 0; color: #ffe59b; background: none; font: inherit; font-size: 13px; text-decoration: underline; cursor: pointer; }
+.goal-route[hidden], .trail-resume[hidden] { display: none; }
+.goal-route { margin: 0 0 28px; padding: 22px; border: 1px solid #ffffff38; border-radius: 16px; color: #f3f6e8; background: #033f2d80; text-align: left; text-shadow: none; }
+.goal-route-heading { display: flex; justify-content: space-between; align-items: start; gap: 20px; }
+.goal-route-heading .explorer-eyebrow { margin-bottom: 8px; color: #efd584; }
+.mission-route .goal-route h2 { margin: 0; max-width: 740px; font: 500 23px/1.3 Spectral,Georgia,serif; overflow-wrap: anywhere; }
+.goal-route-heading > button { flex-shrink: 0; padding: 5px 0; border: 0; color: #f6de92; background: none; font: inherit; font-size: 11px; text-decoration: underline; cursor: pointer; }
+.goal-route-meta { display: flex; align-items: start; justify-content: space-between; gap: 20px; margin: 12px 0 18px; color: #bdd2bd; font-size: 12px; }
+.goal-route-meta p { margin: 0; }
+.goal-route-meta > span { flex-shrink: 0; color: #e2ebb9; }
+.goal-route ol { display: grid; grid-template-columns: repeat(auto-fit,minmax(160px,1fr)); gap: 10px; padding: 0; margin: 0; list-style: none; }
+.goal-route li { padding: 14px; border: 1px solid #ffffff28; border-radius: 10px; background: #ffffff06; }
+.goal-route li > button { display: block; padding: 0; border: 0; color: #fffce9; background: none; font: inherit; font-size: 13px; font-weight: 700; text-align: left; cursor: pointer; }
+.goal-route li > button[aria-current] { color: #ffdc76; }
+.goal-route li details { margin-top: 10px; color: #c9dac1; font-size: 11px; }
+.goal-route summary { cursor: pointer; }
+.goal-route details p { margin: 10px 0 0; line-height: 1.6; }
+.goal-route li > small { display: block; margin-top: 10px; color: #a6c19e; font-size: 10px; }
+.explorer-pin-heading { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 18px; }
+.explorer-pin-heading p { margin: 0; color: #596b46; }
+.trail-pin-button { flex-shrink: 0; padding: 7px 10px; border: 1px solid #afc096; border-radius: 18px; color: #3b5b34; background: #f6f8ed; font: inherit; font-size: 11px; cursor: pointer; }
+.trail-pin-button[aria-pressed="true"] { color: #fff6d5; background: #315d40; border-color: #315d40; }
+.explorer-topic-content .trail-pin-button { margin-left: 10px; }
+.discovery-trail { width: min(720px,calc(100vw - 32px)); max-width: none; max-height: calc(100dvh - 40px); margin: auto; padding: 0; overflow: hidden; border: 1px solid #cdd7ba; border-radius: 22px; color: #284c35; background: #f8f9f2; box-shadow: 0 25px 90px #00311e66; font-family: "Source Sans 3",sans-serif; }
+.discovery-trail[open] { display: flex; flex-direction: column; }
+.discovery-trail::backdrop { background: #002c22a6; backdrop-filter: blur(4px); }
+.trail-dialog-header { display: flex; flex-shrink: 0; align-items: center; gap: 16px; padding: 24px 28px; border-bottom: 1px solid #d5dfc8; background: radial-gradient(ellipse at 100% 0,#e0e9c8,transparent 70%),#edf1e3; }
+.trail-dialog-header img { flex-shrink: 0; object-fit: contain; }
+.trail-dialog-header p { margin-bottom: 6px; color: #68834c; font-size: 9px; }
+.trail-dialog-header h2 { margin: 0; font-size: 32px; }
+.trail-dialog-header > button { display: grid; place-items: center; align-self: flex-start; flex: 0 0 32px; width: 32px; height: 32px; margin-left: auto; padding: 0; border: 1px solid #b8c7a4; border-radius: 50%; color: #345331; background: #f5f8e9; font-size: 22px; cursor: pointer; }
+.trail-dialog-body { overflow-y: auto; overscroll-behavior: contain; padding: 28px; }
+.trail-goal-form p, .trail-checklist > p { margin: 10px 0 0; color: #6c7c5e; font-size: 12px; line-height: 1.6; }
+.trail-collection, .trail-checklist { margin-top: 28px; padding-top: 22px; border-top: 1px solid #d6dfca; }
+.trail-section-title { display: flex; align-items: baseline; justify-content: space-between; gap: 14px; }
+.trail-section-title h3 { margin: 0; font-size: 17px; }
+.trail-section-title > span { flex-shrink: 0; color: #718260; font-size: 11px; }
+.trail-empty { padding: 18px 0 0; color: #6d7c62; font-size: 13px; }
+.trail-pin-row { display: flex; align-items: center; justify-content: space-between; gap: 15px; padding: 16px 0; border-bottom: 1px solid #e0e5d6; }
+.trail-pin-row > div { min-width: 0; overflow-wrap: anywhere; }
+.trail-pin-row small { display: block; margin-bottom: 5px; color: #718461; font-size: 10px; }
+.trail-pin-row p, .trail-pin-row a { margin: 0; color: #385b34; font-size: 14px; line-height: 1.5; text-underline-offset: 3px; }
+.trail-pin-row button, .trail-secondary-actions button { padding: 6px 0; border: 0; color: #71805c; background: none; font: inherit; font-size: 11px; text-decoration: underline; cursor: pointer; }
+.trail-question-form { margin-top: 18px; }
+.trail-question-form label { display: block; margin-bottom: 8px; font-size: 12px; font-weight: 700; }
+.trail-question-form > div { display: flex; gap: 10px; }
+.trail-question-form input { min-width: 0; flex: 1; padding: 10px 12px; border: 1px solid #bdcba8; border-radius: 8px; color: #355534; background: #fffef8; font: inherit; font-size: 13px; }
+.trail-question-form button, .trail-save-actions button { padding: 10px 13px; border: 1px solid #b7c89e; border-radius: 8px; color: #385633; background: #edf2df; font: inherit; font-size: 12px; cursor: pointer; }
+.trail-check-item { display: flex; align-items: start; gap: 12px; margin-top: 16px; font-size: 13px; cursor: pointer; }
+.trail-check-item input { flex: 0 0 18px; width: 18px; height: 18px; margin: 2px 0 0; accent-color: #396846; }
+.trail-check-item > span { min-width: 0; overflow-wrap: anywhere; }
+.trail-check-item strong { font-weight: 600; }
+.trail-check-item small { display: block; margin-top: 5px; color: #728162; font-size: 11px; line-height: 1.6; }
+.trail-check-item input:checked + span strong { text-decoration: line-through; color: #7b886d; }
+.trail-status { margin: 22px 0 8px; font-size: 13px; color: #496f39; }
+.trail-save-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; }
+.trail-save-actions > button:first-child { margin: 0; }
+.trail-storage-note { margin: 12px 0; font-size: 11px; color: #7b866b; }
+.trail-secondary-actions { display: flex; justify-content: space-between; gap: 15px; }
+.koa-chat-pin { margin: 8px 10px 0 0; padding: 4px 0; border: 0; color: #5c734a; background: transparent; font: inherit; font-size: 10px; text-decoration: underline; text-underline-offset: 3px; cursor: pointer; }
+.koa-chat-message-user .koa-chat-pin { color: #e5e9be; }
+.koa-chat-goal { margin: 0; padding: 10px 18px; border-bottom: 1px solid #e0e5d6; color: #607a4b; background: #f0f4e6; font-size: 11px; line-height: 1.5; max-height: 78px; overflow-y: auto; }
+.discovery-trail :focus-visible, .goal-start :focus-visible, .goal-route :focus-visible, .trail-entry-button:focus-visible { outline: 3px solid #cca22c; outline-offset: 3px; }
+@media (max-width: 760px) {
+    .trail-entry-button { top: 23px; right: 16px; padding: 7px 10px; font-size: 11px; }
+    .goal-start { padding: 20px; }
+    .goal-start h2 { font-size: 24px; }
+    .goal-route { padding: 18px; }
+    .goal-route-heading, .goal-route-meta { flex-direction: column; gap: 9px; }
+    .mission-route .goal-route h2 { font-size: 21px; }
+    .goal-route ol { display: flex; overflow-x: auto; scroll-snap-type: x proximity; padding-bottom: 6px; }
+    .goal-route li { flex: 0 0 85%; scroll-snap-align: start; }
+    .explorer-pin-heading { flex-wrap: wrap; }
+    .discovery-trail { width: calc(100vw - 16px); max-height: calc(100dvh - 16px); border-radius: 16px; }
+    .trail-dialog-header { padding: 18px; gap: 10px; }
+    .trail-dialog-header img { width: 46px; height: 54px; }
+    .trail-dialog-header h2 { font-size: 25px; }
+    .trail-dialog-header p { font-size: 8px; }
+    .trail-dialog-body { padding: 20px; }
+    .trail-question-form > div { flex-wrap: wrap; }
+    .trail-question-form input { flex-basis: 100%; }
+}
+
+.trail-saved-return { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 22px; padding: 14px; border: 1px solid #c5d3af; border-radius: 10px; background: #edf2df; }
+.trail-saved-return[hidden] { display: none; }
+.trail-saved-return p { margin: 0; color: #536e42; font-size: 12px; }
+.trail-saved-return button { padding: 5px 0; border: 0; color: #416234; background: none; font: inherit; font-size: 12px; text-decoration: underline; cursor: pointer; }

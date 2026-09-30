@@ -1,0 +1,16 @@
+{% load static wagtailcore_tags %}
+<article class="explorer-article" data-stop="{{ record.id }}">
+    <header class="explorer-header">
+        <div class="explorer-pin-heading"><p class="explorer-eyebrow">{{ record.eyebrow }}</p><button type="button" class="trail-pin-button" data-pin-url="{{ record.url }}" data-pin-title="{{ record.title }}" aria-pressed="false">Pin to my trail</button></div>
+        <h1 tabindex="-1" data-explorer-title>{{ record.title }}</h1>
+        {% if intro %}<div class="explorer-description">{% if record.is_home %}{{ intro|richtext }}{% else %}{{ intro|linebreaks }}{% endif %}</div>{% endif %}
+        {% include "home/koa_companion.html" with location="stop" %}
+    </header>
+    <section class="explorer-reading" aria-label="{{ record.title }} content">
+        {% if body %}<div class="explorer-richtext">{{ body|richtext }}</div>{% else %}<p class="explorer-empty">{{ home.empty_content_message }}</p>{% endif %}
+    </section>
+    {% if related %}<section class="research-doors" aria-labelledby="related-title"><div class="explorer-section-heading"><h2 id="related-title">Keep exploring</h2></div><div class="research-card-grid">
+        {% for item in related %}<a class="research-card{% if forloop.first %} research-card-featured{% endif %}" href="{{ item.url }}" data-explore-stop="{{ item.id }}"><span class="research-card-top"><span class="explorer-eyebrow">{{ item.eyebrow }}</span><span aria-hidden="true">{{ forloop.counter|stringformat:"02d" }} /</span></span><strong>{{ item.title }}</strong>{% if item.intro %}<p>{{ item.intro }}</p>{% endif %}<span class="research-card-link">Explore <span aria-hidden="true">&nearr;</span></span></a>{% endfor %}
+    </div></section>{% endif %}
+    <footer class="explorer-next"><div class="koa-next-introduction"><img src="{% static 'images/koa-wave.png' %}" alt="" width="50" height="55"><div><span class="explorer-eyebrow">Koa's next stop</span><p>Continue your pathway</p></div></div><button class="explorer-next-button" type="button" data-explore-stop="">Explore <span aria-hidden="true">&rarr;</span></button></footer>
+</article>
